@@ -1,10 +1,9 @@
 #include <stdio.h>
-#include <ctype.h>
 
 /**
- * main - This program uses printchar to
- * print the alphabet in lowercase, and then
- * again in uppercase.
+ * main - This program uses putchar to
+ * print rints the alphabet in lowercase,
+ * then in uppercase.
  *
  * Return: 0
  */
@@ -12,35 +11,25 @@
 int main(void)
 {
 
-	int i;
+	int lwr;
+	int upr;
 
-	char abc[26] = {'a', 'b', 'c', 'd', 'e',
-			'f', 'g', 'h', 'i', 'j',
-			'k', 'l', 'm', 'n', 'o',
-			'p', 'q', 'r', 's', 't',
-			'u', 'v', 'w', 'x', 'y', 'z'};
+	lwr = 97;
 
-	i = 0;
-
-	while (i < 27)
+	while (lwr <= 122)
 	{
-		if (i < 26)
-		{
-			putchar(abc[i]);
-			i++;
-		}
-
-		else if (i > 25)
-		{
-			i = 0;
-			while (i < 26)
-			{
-				putchar(toupper(abc[i]));
-				i++;
-			}
-			i++;
-		}
+		putchar(lwr);
+		++lwr;
 	}
+
+	upr = 65;
+
+	while (upr <= 90)
+	{
+		putchar(upr);
+		++upr;
+	}
+
 	putchar('\n');
 
 	return (0);
