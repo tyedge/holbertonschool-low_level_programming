@@ -7,9 +7,8 @@
  * Return: 0
  */
 
-int main()
+int main(void)
 {
-
 
 	int sch[9] = {'H', 'o', 'l', 'b',
 		      'e', 'r', 't', 'o', 'n'};
