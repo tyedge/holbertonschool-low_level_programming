@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
  * main - This program uses putchar to
@@ -7,7 +7,7 @@
  * Return: 0
  */
 
-int main(void)
+int main()
 {
 
 
@@ -18,10 +18,11 @@ int main(void)
 
 	while (i < 9)
 	{
-		putchar(sch[i]);
+		_putchar(sch[i]);
 		i++;
 	}
-	putchar('\n');
+
+	_putchar('\n');
 
 	return (0);
 }
