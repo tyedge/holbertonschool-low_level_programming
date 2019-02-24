@@ -14,10 +14,10 @@ int _isupper(int c)
 
 	for (chkr = 65; chkr <= 90; chkr++)
 	{
-		if (c == chkr)
-			return (1);
-		else
+		if (c != chkr)
 			return (0);
+		else
+			return (1);
 	}
 	return (0);
 }
