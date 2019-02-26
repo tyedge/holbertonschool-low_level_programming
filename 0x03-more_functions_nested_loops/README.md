@@ -15,4 +15,4 @@ Overview: This project takes a deeper dive into writing C functions with nested 
 10-print_triangle.c - this function prints a triangle, followed by a new line
 
 
-Document last edited by Ty Edge on Wednesday, February 22, 2019.
+Document last edited by Ty Edge on Friday, February 22, 2019.

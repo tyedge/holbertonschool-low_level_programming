@@ -15,4 +15,4 @@ Overview: This project is about understanding the basics of the C programming la
 10-add.c - function that adds two integers and returns the result.
 11-print_to_98.c - function that prints all the natural numbers from n to 98, followed by a new line
 
-Document last edited by Ty Edge on Wednesday, February 12, 2019.
+Document last edited by Ty Edge on Tuesday, February 12, 2019.

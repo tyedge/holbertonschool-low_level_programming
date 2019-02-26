@@ -13,4 +13,4 @@ Overview: This project is about understanding the basics of the C programming la
 6-size.c - this C program prints the size of various data types on the computer it is compiled and run on and returns 0
 
 
-Document last edited by Ty Edge on Wednesday, February 7, 2019.
+Document last edited by Ty Edge on Thursday, February 7, 2019.

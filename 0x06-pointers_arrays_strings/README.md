@@ -1,4 +1,4 @@
-# holbertonschool-low_level_programming/0x06-pointers_arrays_strings
+# holbertonschool-low_level_programming/0x06. C - Even more pointers, arrays and strings
 
 Overview: This project covers advanced concepts in writing C points, arrays, and strings.
 

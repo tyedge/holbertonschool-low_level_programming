@@ -14,4 +14,4 @@ Overview: This project is about understanding Pointers, Arrays, and Strings in t
 8-print_array.c - this function  prints n elements of an array of integers, separated by comma, followed by a space
 9-strcpy.c - this function copies the string pointed to by src, including the terminating null byte (\0), to the buffer pointed to by dest
 
-Document last edited by Ty Edge on Wednesday, February 12, 2019.
+Document last edited by Ty Edge on Tuesday, February 26, 2019.
