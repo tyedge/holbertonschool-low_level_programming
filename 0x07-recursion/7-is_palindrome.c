@@ -19,15 +19,12 @@ int is_palindrome(char *s)
 	i = 0;
 	j = len - 1;
 
-
-	if (*s != 0)
-	{
-		is_palindrome(s + 1);
-	}
-	if (s[i] != s[j])
-		return (0);
-	else
+	if (*s == 0)
 		return (1);
+	else if (s[i] != s[j])
+		return (0);
+	is_palindrome(s + 1);
+	return (1);
 }
 
 /**
