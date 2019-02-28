@@ -1,6 +1,6 @@
 #include "holberton.h"
 
-int findlen(char *n);
+int _strlen_recursion(char *s);
 
 /**
  * is_palindrome - evaluates a string to
@@ -15,7 +15,7 @@ int is_palindrome(char *s)
 {
 	int i, j, len;
 
-	len = findlen(s);
+	len = _strlen_recursion(s);
 	i = 0;
 	j = len - 1;
 
@@ -28,20 +28,17 @@ int is_palindrome(char *s)
 }
 
 /**
- * findlen - this function finds the
- * length of a string
- * @n: First operand
+ * _strlen_recursion - this function finds the
+ * length of an array.
+ * @s: First operand
  *
- * Return: string length
+ * Return: void
  */
 
-int findlen(char *n)
+int _strlen_recursion(char *s)
 {
-	int i;
-
-	for (i = 0; *n != 0; n++, i++)
-	{
-		;
-	}
-	return (i);
+	if (*s == 0)
+		return (0);
+	else
+		return (1 + _strlen_recursion(s + 1));
 }
