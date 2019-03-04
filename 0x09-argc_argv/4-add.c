@@ -27,18 +27,11 @@ int main(int argc, char **argv)
 			else
 			{
 				sum = 0;
-				break;
+				printf("%s\n", "Error");
+				return (1);
 			}
 		}
-		if (sum > 0)
-		{
-			printf("%d\n", sum);
-		}
-		else
-		{
-			printf("%s\n", "Error");
-			return (1);
-		}
+		printf("%d\n", sum);
 	}
 	else
 	{
