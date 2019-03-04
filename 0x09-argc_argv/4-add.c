@@ -40,7 +40,7 @@ int main(int argc, char **argv)
 			return (1);
 		}
 	}
-	else if (argc == 1)
+	else
 	{
 		printf("%d\n", 0);
 	}
