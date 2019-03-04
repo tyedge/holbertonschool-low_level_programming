@@ -1,9 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main (int argc, char *argv[])
+/**
+ * main - This program  multiplies two numbers
+ * @argc: First operand
+ * @argv: Second operand
+ *
+ * Return: 0 if two numbers are passed and 0 otherwise.
+ */
+
+int main(int argc, char *argv[])
 {
-        int x = 1;
+	int x = 1;
 	int y = 2;
 
 	if (argc == 3)

@@ -1,7 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main (int argc, char *argv[])
+/**
+ * main - This program prints all arguments it
+ * receives
+ * @argc: First operand
+ * @argv: Second operand
+ *
+ * Return: 0
+ */
+
+int main(int argc, char *argv[])
 {
 	int i;
 
@@ -9,5 +18,5 @@ int main (int argc, char *argv[])
 	{
 		printf("%s\n", argv[i]);
 	}
-        return (0);
+	return (0);
 }

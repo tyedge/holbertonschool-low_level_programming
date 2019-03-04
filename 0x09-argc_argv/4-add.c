@@ -2,14 +2,23 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-int main (int argc, char **argv)
+/**
+ * main - This program adds positive numbers
+ * @argc: First operand
+ * @argv: Second operand
+ *
+ * Return: 0 if all arguments of argv are
+ * positive integers and 1 otherwise.
+ */
+
+int main(int argc, char **argv)
 {
-        int i;
+	int i;
 	int sum = 0;
 
-        if (argc > 1)
-        {
-                for (i = 1; i < argc; i++)
+	if (argc > 1)
+	{
+		for (i = 1; i < argc; i++)
 		{
 			if (isdigit(*argv[i]))
 			{
@@ -17,14 +26,23 @@ int main (int argc, char **argv)
 			}
 			else
 			{
-				return (printf("%s\n", "Error"));
+				sum = 0;
+				break;
 			}
 		}
-		printf("%d\n", sum);
-        }
-        else if (argc == 1)
-        {
-                printf("%d\n", 0);
-        }
+		if (sum > 0)
+		{
+			printf("%d\n", sum);
+		}
+		else
+		{
+			printf("%s\n", "Error");
+			return (1);
+		}
+	}
+	else if (argc == 1)
+	{
+		printf("%d\n", 0);
+	}
 	return (0);
 }
