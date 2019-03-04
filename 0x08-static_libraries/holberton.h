@@ -1,3 +1,7 @@
+#ifndef _HOLBERTON_H_
+#define _HOLBERTON_H_
+
+
 /* 0x02-functions_nested_loops Prototypes */
 int _putchar(int c);
 void print_alphabet(void);
@@ -68,3 +72,6 @@ int _pow_recursion(int x, int y);
 int _sqrt_recursion(int n);
 int is_prime_number(int n);
 int is_palindrome(char *s);
+
+
+#endif /* _HOLBERTON_H_ */
