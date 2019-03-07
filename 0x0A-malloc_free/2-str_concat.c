@@ -13,7 +13,45 @@
 
 char *str_concat(char *s1, char *s2)
 {
+	char *p;
+	int i;
+
+	if (s1 == NULL)
+		s1[0] = '\0';
+	else if (s2 == NULL)
+		s2[0] = '\0';
+
+	p = malloc(sizeof(char) * (_strlen(s1) + _strlen(s2) + 1));
+
+	if (p == NULL)
+		return (NULL);
+
+	*p = s1[0];
+	for (i = 0; *s1 != '\0'; s1++, i++)
+	{
+		p[i] = s1[0];
+	}
+	for (; *s2 != '\0'; s2++, i++)
+	{
+		p[i] = s2[0];
+	}
+	p[i++] = '\0';
+	return (p);
+}
 
 
+/**
+ * _strlen - finds the string length
+ * @n: First operand
+ *
+ * Return: length of string
+ */
 
+int _strlen(char *n)
+{
+	int i = 0;
+
+	while (*n++)
+		i++;
+	return (i);
 }
