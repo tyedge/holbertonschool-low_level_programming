@@ -11,18 +11,25 @@
  * NULL if it fails.
  */
 
+
 int *array_range(int min, int max)
 {
-	int i, a;
+	int i;
 	int *arr;
 
 	if (min > max)
 		return (NULL);
 
-	arr = malloc((max - min + 1) * sizeof(int));
+	arr = malloc(((max - min) + 1) * sizeof(*arr));
 	if (arr == NULL)
 		return (NULL);
-	for (a = 0, i = min; arr[a] <= max; a++, i++)
-		arr[a] = i;
+	i = 0;
+	while (min <= max)
+	{
+		arr[i] = min;
+		/*	printf("min is: %d and i is: %d\n", min, i);*/
+		min++;
+		i++;
+	}
 	return (arr);
 }
