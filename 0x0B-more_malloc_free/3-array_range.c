@@ -20,14 +20,13 @@ int *array_range(int min, int max)
 	if (min > max)
 		return (NULL);
 
-	arr = malloc(((max - min) + 1) * sizeof(*arr));
+	arr = malloc(((max - min) + 1) * sizeof(int));
 	if (arr == NULL)
 		return (NULL);
 	i = 0;
 	while (min <= max)
 	{
 		arr[i] = min;
-		/*	printf("min is: %d and i is: %d\n", min, i);*/
 		min++;
 		i++;
 	}
