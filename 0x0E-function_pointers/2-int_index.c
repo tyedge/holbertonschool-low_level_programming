@@ -22,11 +22,11 @@ int int_index(int *array, int size, int (*cmp)(int))
 	int i, ret;
 
 	if (array == NULL)
-		exit(EXIT_FAILURE);
+                exit(99);
 	if (size == 0)
 		return (-1);
 	if (cmp == NULL)
-		exit(EXIT_FAILURE);
+		exit(99);
 	for (i = 0; i < size; i++)
 	{
 		ret = cmp(array[i]);
