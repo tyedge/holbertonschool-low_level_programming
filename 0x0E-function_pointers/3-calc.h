@@ -11,7 +11,8 @@
  * @f: The function associated
  */
 
-struct op{
+struct op
+{
 
 	char *op;
 	int (*f)(int a, int b);
