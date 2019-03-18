@@ -30,17 +30,18 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		if (separator != NULL)
 		{
 			if (i != (n - 1))
-				printf("%i%s", va_arg(nums, unsigned int), separator);
+				printf("%d%s", va_arg(nums, unsigned int), separator);
 			else
-				printf("%i\n", va_arg(nums, unsigned int));
+				printf("%d", va_arg(nums, unsigned int));
 		}
 		if (separator == NULL)
 		{
 			if (i != (n - 1))
-				printf("%i ", va_arg(nums, unsigned int));
+				printf("%d ", va_arg(nums, unsigned int));
 			else
-				printf("%i\n", va_arg(nums, unsigned int));
+				printf("%d", va_arg(nums, unsigned int));
 		}
 	}
+	printf("\n");
 	va_end(nums);
 }
