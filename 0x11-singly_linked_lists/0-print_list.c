@@ -12,24 +12,15 @@
 size_t print_list(const list_t *h)
 {
 	const list_t *this_node = h;
-	unsigned int i = 0, ret = 0;
+	unsigned int ret = 0;
 
 
 	while (this_node != NULL)
 	{
-
-		if (this_node->str != '\0')
-		{
-			while (this_node->str[i])
-			{
-				i++;
-			}
-			printf("[%i] %s\n", i, this_node->str);
-		}
+		if (this_node->str == '\0')
+			printf("[0] %p\n", this_node->str);
 		else
-		{
-			printf("[%i] %p\n", i, this_node->str);
-		}
+			printf("[%d] %s\n", this_node->len, this_node->str);
 		ret++;
 		this_node = this_node->next;
 	}
