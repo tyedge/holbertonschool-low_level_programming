@@ -37,6 +37,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	if (*other_nm == NULL)
 	{
 		*other_nm = newer;
+		return (newer);
 	}
 	else
 	{
