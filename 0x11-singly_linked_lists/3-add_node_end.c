@@ -21,10 +21,6 @@ list_t *add_node_end(list_t **head, const char *str)
 	if (newer == NULL)
 		return (NULL);
 	newer->str = strdup(str);
-	newer = malloc(sizeof(list_t));
-	if (newer == NULL)
-		return (NULL);
-	newer->str = strdup(str);
 	if (newer->str != '\0')
 	{
 		while (newer->str[i] != '\0')
