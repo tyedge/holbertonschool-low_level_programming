@@ -20,9 +20,12 @@ list_t *add_node(list_t **head, const char *str)
 	if (newer == NULL)
 		return (NULL);
 	newer->str = strdup(str);
-	while (newer->str[i] != '\0')
+	if (newer->str != '\0')
 	{
-		i++;
+		while (newer->str[i] != '\0')
+		{
+			i++;
+		}
 	}
 	newer->len = i;
 	newer->next = *other_nm;
