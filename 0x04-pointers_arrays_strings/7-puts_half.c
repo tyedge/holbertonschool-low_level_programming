@@ -11,22 +11,22 @@
 
 void puts_half(char *str)
 {
-        int x, n, si;
+	int x, n, si;
 
-	if (str == NULL)
-		return;
 
-        for (x = 0; str[x] != 0; x++)
-                ;
+	for (x = 0; str[x] != '\0'; x++)
+	{
+		;
+	}
 
-        if (x % 2 == 0)
+	if (x % 2 == 0)
 		n = x / 2;
 	else
 		n = (x - 1) / 2;
 
-        for (si = x - n; str[si] != 0; si++)
-        {
-                putchar(str[si]);
-        }
-        putchar('\n');
+	for (si = x - n; str[si] != 0; si++)
+	{
+		putchar(str[si]);
+	}
+	putchar('\n');
 }
