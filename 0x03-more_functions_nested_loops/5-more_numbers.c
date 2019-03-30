@@ -10,22 +10,24 @@
 void more_numbers(void)
 {
 
-	int i, count;
+	int first, sec, i = 0;
 
-	for (i = 0; i < 10; i++)
+	while (i < 10)
 	{
-		for (count = 0; count <= 14; count++)
+		for (first = 0; first <= 1; first++)
 		{
-			if (count >= 10)
+			for (sec = 0; sec < 10; sec++)
 			{
-				_putchar(count / 10 + '0');
-				_putchar(count % 10 + '0');
-			}
-			else
-			{
-				_putchar(count % 10 + '0');
+				if (first == 1)
+				{
+					if (sec == 5)
+						break;
+					_putchar(first + '0');
+				}
+				_putchar(sec + '0');
 			}
 		}
 		_putchar('\n');
+		i++;
 	}
 }
