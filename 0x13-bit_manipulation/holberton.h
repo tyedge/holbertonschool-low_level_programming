@@ -1,5 +1,10 @@
-#ifndef _HOLBERTON_H_
-#define _HOLBERTON_H_
+#ifndef __HOLBERTON_H__
+#define __HOLBERTON_H__
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <strings.h>
 
 
 /* 0x02-functions_nested_loops Prototypes */
@@ -96,5 +101,4 @@ int clear_bit(unsigned long int *n, unsigned int index);
 unsigned int flip_bits(unsigned long int n, unsigned long int m);
 
 
-
-#endif /* _HOLBERTON_H_ */
+#endif /* __HOLBERTON_H__ */
