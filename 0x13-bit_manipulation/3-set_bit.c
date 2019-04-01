@@ -1,12 +1,12 @@
 #include "holberton.h"
 
 /**
- * get_bit - returns the value of a bit
+ * set_bit - sets the value of a bit
  * at a given index
- * @n: the number to be checked
- * @index: the index at which to check
+ * @n: pointer to a value
+ * @index: the index at which to set bit
  *
- * Return: value of bit or -1
+ * Return: value at index or -1
  *
  */
 
