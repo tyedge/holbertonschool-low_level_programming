@@ -31,7 +31,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	buf[size] = '\0';
 
-	while (letters > 0)
+	while (*buf)
 	{
 		_putchar(*buf);
 		buf++;
