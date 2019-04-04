@@ -6,7 +6,7 @@
  * @dest: First string
  * @src: Second string
  *
- * Return: char
+ * Return: pointer to dest
  */
 
 char *_strcat(char *dest, char *src)
@@ -19,11 +19,11 @@ char *_strcat(char *dest, char *src)
 		return (NULL);
 	}
 	i = 0;
-        while (*newstr)
-        {
+	while (*newstr)
+	{
 		i++;
-                newstr++;
-        }
+		newstr++;
+	}
 	len = i;
 	j = 0;
 	while (src[j] != '\0')
