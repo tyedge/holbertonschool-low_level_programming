@@ -25,10 +25,8 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (file0 < 0)
 		return (-1);
 
-	if (text_content == NULL)
-		return (1);
-
-	write(file0, text_content, sizeof(text_content));
+	if (text_content != NULL)
+		write(file0, text_content, sizeof(text_content));
 
 	close(file0);
 
