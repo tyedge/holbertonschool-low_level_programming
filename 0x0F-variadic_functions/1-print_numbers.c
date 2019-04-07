@@ -25,18 +25,18 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	va_start(nums, n);
 
 	i = 0;
- 	while (i < n)
+
+	while (i < n)
 	{
 		int temp = va_arg(nums, unsigned int);
-		printf("%d", temp);
-		if (separator != NULL)
-		{
-			if(i != n - 1)
-				printf("%s", separator);
-			else
-				printf("\n");
-		}
 
+		printf("%d", temp);
+		if (separator != NULL && i != n - 1)
+		{
+			printf("%s", separator);
+		}
+		if (i == n - 1)
+			printf("\n");
 		i++;
 	}
 	va_end(nums);
