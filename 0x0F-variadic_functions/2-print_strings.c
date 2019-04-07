@@ -21,7 +21,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	const char *str_ptr;
 
 	if (n == 0)
-		printf("%c\n", separator[0]);
+		printf("\n");
 
 	va_start(strings, n);
 
