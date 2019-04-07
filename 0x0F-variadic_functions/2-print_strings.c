@@ -25,31 +25,32 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	va_start(strings, n);
 
-	for (i = 0; i < n; i++)
+	for (i = 0; i < n; i++, str_ptr++)
 	{
 		str_ptr = va_arg(strings, const char*);
+		if (str_ptr == NULL)
+			printf("%p", str_ptr);
+		else
+			printf("%s", str_ptr);
 
 		if (separator != NULL)
 		{
-			if (i != (n - 1))
+			if (n == 0)
 			{
-				printf("%s%s", str_ptr, separator);
+				printf("%s\n", separator);
+			}
+			else if (i != (n - 1))
+			{
+				printf("%s", separator);
 			}
 			else
 			{
-				printf("%s\n", str_ptr);
+				printf("\n");
 			}
 		}
-		if (separator == '\0')
+		if (separator == NULL && (i == (n - 1)))
 		{
-			if (i != (n - 1))
-			{
-				printf("%s", str_ptr);
-			}
-			else
-			{
-				printf("%s\n", str_ptr);
-			}
+			printf("\n");
 		}
 	}
 	va_end(strings);
