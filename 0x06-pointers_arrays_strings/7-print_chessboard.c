@@ -1,6 +1,5 @@
+#include <stdio.h>
 #include "holberton.h"
-
-int findlen(char *n);
 
 /**
  * print_chessboard - this function prints out
@@ -13,9 +12,11 @@ int findlen(char *n);
 void print_chessboard(char (*a)[8])
 {
 	int i, j;
-	int len = findlen(*a);
 
-	for (i = 0; i < len; i++)
+	if (a == NULL)
+		return;
+
+	for (i = 0; i < 8; i++)
 	{
 		for (j = 0; j < 8; j++)
 		{
@@ -24,24 +25,4 @@ void print_chessboard(char (*a)[8])
 		}
 		_putchar('\n');
 	}
-}
-
-
-/**
- * findlen - this function finds the
- * length of an array.
- * @n: First operand
- *
- * Return: void
- */
-
-int findlen(char *n)
-{
-	int i;
-
-	for (i = 0; *n != 0; n += 8, i++)
-	{
-		;
-	}
-	return (i);
 }
