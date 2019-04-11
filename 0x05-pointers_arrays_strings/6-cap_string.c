@@ -18,6 +18,9 @@ char *cap_string(char *n)
 	if (n == NULL)
 		return (NULL);
 
+	if (n[0] >= 97 && n[0] <= 122)
+		n[0] -= 32;
+
 	while (*p != '\0')
 	{
 		i = 0;
@@ -25,8 +28,6 @@ char *cap_string(char *n)
 		{
 			if ((*p == delim[i]) && (*(p + 1) >= 97 && *(p + 1) <= 122))
 			{
-				if (delim[i] == '\t')
-					*p = ' ';
 				p++;
 				*p -= 32;
 				i++;
