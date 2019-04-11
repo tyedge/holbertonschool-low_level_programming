@@ -13,9 +13,6 @@ char *rot13(char *p)
 	int i;
 	char *m = p;
 
-	if (m == NULL)
-		return (NULL);
-
 	i = 0;
 	while (*m)
 	{
