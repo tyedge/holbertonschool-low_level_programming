@@ -16,9 +16,6 @@ char *leet(char *n)
 	char arr1[] = {'a', 'e', 'o', 't', 'l', 'A', 'E', 'O', 'T', 'L'};
 	char arr2[] = {'4', '3', '0', '7', '1', '4', '3', '0', '7', '1'};
 
-	if (n == NULL)
-		return (NULL);
-
 	i = 0;
 	while (*k != '\0')
 	{
