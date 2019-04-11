@@ -12,33 +12,28 @@
 char *cap_string(char *n)
 {
 	int i;
+	char *p = n;
 	char delim[] = {'.', ' ', '\t', '\n', ';', '!', '(', ')', '{', '}', '"', ','};
 
 	if (n == NULL)
 		return (NULL);
 
-	if (n[0] >= 97 && n[0] <= 122)
-	{
-
-		n[0] -= 32;
-	}
-
-	while (*n != '\0')
+	while (*p != '\0')
 	{
 		i = 0;
-		while (*n != '\0' && delim[i] != '\0')
+		while (*p != '\0' && delim[i] != '\0')
 		{
-			if ((*n == delim[i]) && (*(n + 1) >= 97 && *(n + 1) <= 122))
+			if ((*p == delim[i]) && (*(p + 1) >= 97 && *(p + 1) <= 122))
 			{
 				if (delim[i] == '\t')
-					*n = ' ';
-				n++;
-				*n -= 32;
+					*p = ' ';
+				p++;
+				*p -= 32;
 				i++;
 			}
 			i++;
 		}
-		n++;
+		p++;
 		i = 0;
 	}
 	return (n);
