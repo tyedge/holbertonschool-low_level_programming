@@ -2,8 +2,8 @@
 #include "holberton.h"
 
 /**
- * cap_string - This program capitalizes all
- * capitalizes all words of a string
+ * leet - This program encodes a string
+ * encodes a string into 1337
  * @n: pointer to a character string
  *
  * Return: a pointer to modified string
