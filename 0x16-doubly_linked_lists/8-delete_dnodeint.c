@@ -31,11 +31,14 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 			i++;
 		}
 	}
+	if (index > i)
+		return (-1);
 	if (*head == start)
 		*head = start->next;
 	if (start->next != NULL)
 		start->next->prev = start->prev;
 	if (start->prev != NULL)
 		start->prev->next = start->next;
+	free(start);
 	return (1);
 }
