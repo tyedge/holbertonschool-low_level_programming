@@ -20,17 +20,17 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *node = *h, *newnode;
 	unsigned int len, i = 0;
 
-	if (h == NULL || *h == NULL)
+	if (h == NULL)
 		return (NULL);
 	len = find_len(*dup);
 	if (idx > len)
 		return (NULL);
-	if (idx == 0)
+	if (idx == 0 || *h == NULL)
 	{
 		newnode = add_dnodeint(dup, n);
 		return (newnode);
 	}
-	else if (idx == len)
+	if (idx == len)
 	{
 		newnode = add_dnodeint_end(dup, n);
 		return (newnode);
