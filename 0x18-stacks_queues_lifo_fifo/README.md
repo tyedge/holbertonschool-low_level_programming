@@ -1,4 +1,4 @@
-# holbertonschool-lower_level_programming/0x18-stacks_queues_lifo_fifo
+# holbertonschool-low_level_programming/0x18-stacks_queues_lifo_fifo
 
 
 Overview: This project covers the creation of an interpreter for monty scripting language.
