@@ -10,7 +10,7 @@
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *newtable;
-	hash_node_t *newarr;
+	hash_node_t **newarr;
 
 	newtable = calloc(2, sizeof(hash_table_t *));
 	if (newtable == NULL)
@@ -24,6 +24,6 @@ hash_table_t *hash_table_create(unsigned long int size)
 		free(newtable);
 		return (NULL);
 	}
-	newtable->array = &newarr;
+	newtable->array = newarr;
 	return (newtable);
 }
