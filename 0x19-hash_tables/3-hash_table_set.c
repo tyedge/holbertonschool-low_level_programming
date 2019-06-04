@@ -1,5 +1,7 @@
 #include "hash_tables.h"
 
+hash_node_t *noder(hash_node_t **head, const char *key, const char *value);
+
 /**
  * hash_table_set - this function adds an element to the hash table
  * @ht: the hash table you want to add or update the key/value to
@@ -18,19 +20,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (key == '\0')
 		return (0);
 	k = (void *)key;
+	index = key_index(k, ht->size);
 	newnode = malloc(sizeof(hash_node_t));
 	if (newnode == NULL)
 		return (0);
 	val = strdup(value);
 	if (val == NULL)
-	{
-		free(newnode);
 		return (0);
-	}
 	newnode->key = k;
 	newnode->value = val;
-	index = key_index((const unsigned char *)key, ht->size);
-	if (arr == NULL)
+	if (arr[index] == NULL)
 	{
 		arr[index] = newnode;
 		arr[index]->next = NULL;
@@ -38,15 +37,33 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
-		while (arr[index] != NULL)
-		{
-			if (arr[index]->key == k)
-			{
-				arr[index]->value = val;
-				return (1);
-			}
-			arr[index] = arr[index]->next;
-		}
+		newnode = noder(arr, key, value);
+		return (1);
 	}
-	return (0);
+}
+
+/**
+ * noder - adds a node to the beginning of a linked list
+ * @head: a pointer to a pointer to a list_t struct
+ * @key: the
+ * @value: the value associated with the key
+ *
+ * Return: pointer to the new node
+ *
+ */
+
+hash_node_t *noder(hash_node_t **head, const char *key, const char *value)
+{
+	hash_node_t **other_nm = head;
+	hash_node_t *newer;
+
+	newer = malloc(sizeof(hash_node_t));
+	if (newer == NULL)
+		return (NULL);
+	newer->key = (void *)key;
+	newer->value = strdup(value);
+	newer->next = *other_nm;
+	*other_nm = newer;
+
+	return (newer);
 }
