@@ -12,7 +12,6 @@ def island_perimeter(grid):
     perim = 0
     topbot = 0
     sides = 0
-    i = 0
 
     if not grid:
         return perim
@@ -27,11 +26,11 @@ def island_perimeter(grid):
 
 
 def count_topbot(grid, row, col):
-    topbot = 0
     """ This functions counts the top and bottom sides in island """
-    if (grid[row + 1][col] == 0 or row + 1 >= len(grid)):
+    topbot = 0
+    if (row + 1 >= len(grid) or grid[row + 1][col] == 0):
         topbot += 1
-    if (grid[row - 1][col] == 0 or row - 1 < 0):
+    if (row - 1 < 0 or grid[row - 1][col] == 0):
         topbot += 1
     return topbot
 
@@ -39,8 +38,8 @@ def count_topbot(grid, row, col):
 def count_sides(grid, row, col):
     """ This functions counts the left and right sides in island """
     sides = 0
-    if (grid[row][col - 1] == 0 or col - 1 < 0):
+    if (col - 1 < 0 or grid[row][col - 1] == 0):
         sides += 1
-    if (grid[row][col + 1] == 0 or col + 1 >= len(grid)):
+    if (col + 1 >= len(grid[row]) or grid[row][col + 1] == 0):
         sides += 1
     return sides
