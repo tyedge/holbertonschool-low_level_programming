@@ -2,7 +2,6 @@ CC=gcc
 SRC=main.c holberton.c
 OBJ=$(addsuffix .o, main holberton)
 NAME=holberton
-RM=rm -f
 CFLAGS=-Wall -Werror -Wextra -pedantic
 
 .PHONY: all clean oclean re
