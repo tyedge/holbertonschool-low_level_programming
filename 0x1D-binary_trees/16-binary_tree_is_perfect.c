@@ -12,7 +12,7 @@ int perfectionTest(const binary_tree_t *tree, int d, int level);
 
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	int level = -1;
+	int level = 0;
 	int depth = 0;
 
 	return (perfectionTest(tree, depth, level));
@@ -38,16 +38,17 @@ int perfectionTest(const binary_tree_t *tree, int depth, int level)
 
 	if (tree->left == NULL && tree->right == NULL)
 	{
-		if (depth == level)
+		if (depth == level + 1)
 			res = 1;
 		return (res);
 	}
 
-	if (tree->left == NULL || tree->right == NULL)
-		return (0);
-	level += 1;
-	return (perfectionTest(tree->left, depth, level + 1) &
-		perfectionTest(tree->right, depth, level + 1));
+	if (tree->left != NULL || tree->right != NULL)
+	{
+		return (perfectionTest(tree->left, depth, level + 1) &
+			perfectionTest(tree->right, depth, level + 1));
+	}
+	return (0);
 }
 
 /**
