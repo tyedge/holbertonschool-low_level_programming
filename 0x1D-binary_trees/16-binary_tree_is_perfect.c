@@ -1,5 +1,6 @@
 #include "binary_trees.h"
 
+size_t tree_depth(const binary_tree_t *tree);
 int perfectionTest(const binary_tree_t *tree, int depth, int level);
 
 /**
@@ -13,7 +14,7 @@ int perfectionTest(const binary_tree_t *tree, int depth, int level);
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	int level = 0;
-	int depth = 0;
+	int depth = tree_depth(tree);
 
 	return (perfectionTest(tree, depth, level));
 }
@@ -29,41 +30,43 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 
 int perfectionTest(const binary_tree_t *tree, int depth, int level)
 {
-	depth += binary_tree_depth(tree);
-
 	if (tree == NULL)
 		return (0);
 
 	if (tree->left == NULL && tree->right == NULL)
 	{
-		if (depth == level + 1)
+		if (depth == level)
 			return (1);
 	}
-	if (tree->left != NULL && tree->right != NULL)
-	{
-		return (perfectionTest(tree->left, depth, level + 1) &&
-			perfectionTest(tree->right, depth, level + 1));
-	}
-	return (0);
+	if (tree->left == NULL || tree->right == NULL)
+		return (0);
+
+	return (perfectionTest(tree->left, depth, level + 1) &&
+		perfectionTest(tree->right, depth, level + 1));
+
 }
 
 /**
- * binary_tree_depth - measures the depth of a node in a binary tree
+ * tree_depth - measures the depth of a node in a binary tree
  * @tree: pointer to the node to measure the depth
  *
  * Return: depth of the tree or NULL
  */
-size_t binary_tree_depth(const binary_tree_t *tree)
+size_t tree_depth(const binary_tree_t *tree)
 {
-	size_t depth;
+	size_t DoR;
+	size_t DoL;
 
 	if (tree == NULL)
 		return (0);
 
-	if (tree->parent == NULL)
+	DoR = tree_depth(tree->left);
+	DoL = tree_depth(tree->right);
+
+	if (tree->right == NULL && tree->left == NULL)
 		return (0);
-
-	depth = binary_tree_depth(tree->parent);
-	return (depth + 1);
-
+	if (DoL > DoR)
+		return (DoL + 1);
+	else
+		return (DoR + 1);
 }
