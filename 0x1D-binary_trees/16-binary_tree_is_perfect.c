@@ -1,6 +1,6 @@
 #include "binary_trees.h"
 
-int perfectionTest(const binary_tree_t *tree, int d, int level);
+int perfectionTest(const binary_tree_t *tree, int depth, int level);
 
 /**
  * binary_tree_is_perfect - this function is a wrapper function which calls a
@@ -42,13 +42,11 @@ int perfectionTest(const binary_tree_t *tree, int depth, int level)
 			res = 1;
 		return (res);
 	}
+	if (tree->left == NULL || tree->right == NULL)
+		return (0);
 
-	if (tree->left != NULL || tree->right != NULL)
-	{
-		return (perfectionTest(tree->left, depth, level + 1) &
-			perfectionTest(tree->right, depth, level + 1));
-	}
-	return (0);
+	return (perfectionTest(tree->left, depth, level + 1) &
+		perfectionTest(tree->right, depth, level + 1));
 }
 
 /**
