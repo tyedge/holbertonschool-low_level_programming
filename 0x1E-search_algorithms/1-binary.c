@@ -18,10 +18,12 @@ int binary_search(int *array, size_t size, int value)
 	size_t lower = 0;
 	size_t upper = size - 1;
 
-	int ret = finder_func(array, lower, upper, value);
+	int ret;
 
 	if (array == NULL)
 		return (-1);
+
+	ret = finder_func(array, lower, upper, value);
 
 	return (ret);
 
